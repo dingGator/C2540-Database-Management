@@ -1,11 +1,11 @@
 use recipesexample ;
 
-select recipetitle, preparation
+select recipetitle, preparation, notes
 from recipes
 where ((recipeclassid = 1) and (notes is not null))
  ;
 
-
+/*
     SELECT 
         `recipesexample`.`recipes`.`RecipeTitle` AS `RecipeTitle`,
         `recipesexample`.`recipes`.`Preparation` AS `Preparation`,
@@ -15,3 +15,4 @@ where ((recipeclassid = 1) and (notes is not null))
     WHERE
         ((`recipesexample`.`recipes`.`RecipeClassID` = 1)
             AND (`recipesexample`.`recipes`.`Notes` IS NOT NULL));
+*/

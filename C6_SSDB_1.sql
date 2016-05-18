@@ -1,10 +1,11 @@
 use schoolschedulingexample ;
 
-select concat(stflastname,', ', stffirstname) as name1,
+select concat(stffirstname,' ', stflastname) as name1,
         stfstreetaddress
 from staff
 
 where (stfstreetaddress like '%box%' )
+order by name1
 ;
 /*
 CREATE 

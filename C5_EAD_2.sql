@@ -1,7 +1,9 @@
 use entertainmentagencyexample;
 
-select EntStageName, 
-	EntWebPage
+use entertainmentagencyexample;
+select EntStageName AS Entertainer,
+        CONCAT('Web site: ',
+                EntWebPage) AS Drop_By
 from entertainers
 ;
 /*

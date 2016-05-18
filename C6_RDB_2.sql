@@ -2,9 +2,9 @@ use recipesexample ;
 
 select *
 from recipes
-where recipeid between 1 and 5
+where (recipeid between 1 and 5)
  ;
-
+/*
     SELECT 
         `recipesexample`.`recipes`.`RecipeID` AS `RecipeID`,
         `recipesexample`.`recipes`.`RecipeTitle` AS `RecipeTitle`,
@@ -14,3 +14,4 @@ where recipeid between 1 and 5
         `recipesexample`.`recipes`
     WHERE
         (`recipesexample`.`recipes`.`RecipeID` BETWEEN 1 AND 5);
+*/

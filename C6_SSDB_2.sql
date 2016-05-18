@@ -1,7 +1,7 @@
 use schoolschedulingexample ;
 
-select studlastname, studfirstname,
-        studstate
+select studlastname|| ", "|| studfirstname as studentName,
+        StudAreaCode, StudPhoneNumber, StudState
 from students
 where studState not in ('WA', 'OR','ID' )
 ;

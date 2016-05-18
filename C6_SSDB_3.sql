@@ -1,11 +1,11 @@
 use schoolschedulingexample ;
-
+use schoolschedulingexample;
 select SubjectName,SubjectDescription,SubjectCode
 from Subjects
 where SubjectCode like 'MUS%'
 ;
 
-
+/*
     SELECT 
         `schoolschedulingexample`.`subjects`.`SubjectName` AS `SubjectName`,
         `schoolschedulingexample`.`subjects`.`SubjectDescription` AS `SubjectDescription`,
@@ -14,3 +14,4 @@ where SubjectCode like 'MUS%'
         `schoolschedulingexample`.`subjects`
     WHERE
         (`schoolschedulingexample`.`subjects`.`SubjectCode` LIKE 'MUS%');
+*/

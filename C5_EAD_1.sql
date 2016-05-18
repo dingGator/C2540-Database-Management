@@ -1,7 +1,7 @@
 use entertainmentagencyexample;
 
 select 	Custcity, 
-		concat (CustFirstName, ', ' ,CustLastname) as Customer
+		concat (CustLastName, ', ' ,CustFirstName) as Customer
 from customers
 order by custcity,
 CONCAT(CustLastName,', ',CustFirstName);
