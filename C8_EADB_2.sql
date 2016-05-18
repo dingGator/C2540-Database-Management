@@ -1,15 +1,16 @@
 use EntertainmentAgencyexample;
 select distinct
-	eng.customerid,
-    (cust.custfirstname||' ' || cust.custlastname) as customer_name,
-    eng.entertainerid,
-    ent.entstageName
+	eng.customerId,
+    (cust.custfirstname||' ' || cust.custlastname) as customer_FullName,
+    eng.entertainerId,
+    ent.entStageName
     
 from ((customers cust 
 	join engagements eng  
 		on (cust.customerid = eng.customerid))
 	join entertainers ent
 		on (eng.entertainerid = ent.entertainerid))
+        order by customerId
  
 ; 
 /*

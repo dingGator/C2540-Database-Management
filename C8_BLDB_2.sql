@@ -2,10 +2,11 @@ use bowlingleagueexample;
 select 
 score.bowlerid,
        tea.teamname,
-       bowl.bowlerfirstname,
-       bowl.bowlerlastname,
+       concat(bowl.bowlerfirstname|| " " ||
+       bowl.bowlerlastname) as bowlerFullName,
        score.matchid,
-       score.rawscore
+       score.rawscore,
+       score.gameNumber
        
 from (teams tea
 	join (bowlers bowl)

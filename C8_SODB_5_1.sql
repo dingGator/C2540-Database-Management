@@ -1,3 +1,5 @@
+use salesordersexample;
+
 select 
 	cust.custFirstName ||' ' ||	cust.custLastName as employee_Name,
     empl.empFirstName || ' ' || empl.empLastName as customer_Name 

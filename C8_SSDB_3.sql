@@ -4,12 +4,12 @@ select
         stf.stfFirstName,
         stf.stfLastName,
         subs.subjectid,
- 
-		subs.subjectname
-from 	((staff stf 
+ 		subs.subjectname
+from 	(staff stf 
 	join faculty_subjects subf 
-	on((stf.StaffID = subf.StaffID))) 
-    join subjects subs on((subs.SubjectID = subf.SubjectID)));
+	on(stf.StaffID = subf.StaffID) 
+    join subjects subs 
+    on(subs.SubjectID = subf.SubjectID));
 
 
 ; 

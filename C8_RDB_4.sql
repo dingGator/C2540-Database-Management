@@ -10,33 +10,33 @@ where ((ingr.ingredientname = 'beef') ||
 	
 */
 select 
-recipes.RecipeID AS RecipeID,
-recipes.RecipeTitle AS RecipeTitle 
-from ((recipes 
-join recipe_ingredients 
-on((recipes.RecipeID 
-	= recipe_ingredients.RecipeID))) 
-join ingredients 
-on((ingredients.IngredientID 
-	= recipe_ingredients.IngredientID))) 
+rec.RecipeID AS RecipeID,
+rec.RecipeTitle AS RecipeTitle 
+from ((recipes rec
+join recipe_ingredients rec_ingr
+on((rec.RecipeID 
+	= rec_ingr.RecipeID))) 
+join ingredients ingr
+on((ingr.IngredientID 
+	= rec_ingr.IngredientID))) 
     
-    where (ingredients.IngredientName 
-    = 'Beef')) beefrecipes
+    where (ingr.IngredientName 
+    = 'Beef')) bfrec
 
 join (select 
-recipes.RecipeID AS RecipeID,
-recipes.RecipeTitle AS RecipeTitle 
-from ((recipes 
-join recipe_ingredients 
-on((recipes.RecipeID 
-	= recipe_ingredients.RecipeID))) 
-join ingredients 
-on((ingredients.IngredientID 
-	= recipe_ingredients.IngredientID))) 
+rec.RecipeID AS RecipeID,
+rec.RecipeTitle AS RecipeTitle 
+from ((recipes rec
+join recipe_ingredients rec_ingr 
+on((rec.RecipeID 
+	= rec_ingr.RecipeID))) 
+join ingredients ingr 
+on((ingr.IngredientID 
+	= rec_ingr.IngredientID))) 
     
-    where (ingredients.IngredientName 
-    = 'Garlic')) garlicrecipes
-    on((beefrecipes.RecipeID = garlicrecipes.RecipeID))
+    where (ingr.IngredientName 
+    = 'Garlic')) garlrec
+    on((bfrec.RecipeID = garlrec.RecipeID))
 
 ;
 /*

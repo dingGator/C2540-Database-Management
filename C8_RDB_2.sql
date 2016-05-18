@@ -1,5 +1,6 @@
 use recipesexample;
-select distinct resp.RecipeID
+select distinct RecipeTitle,
+resp.RecipeID
 
 from 
 

@@ -1,17 +1,17 @@
 use bowlingleagueexample;
-select bowl1.bowlerid  as bowler1,
-		bowl1.bowlerfirstname as bowler1_firstname ,
-        bowl1.bowlerlastname as bowler1_lastname,
+select bowl1.bowlerid  as bowler1_ID,
+		concat(bowl1.bowlerfirstname ||" "|| bowl1.bowlerlastname) as bowler1_FullName,
         
-        bowl2. bowlerid as bowler2,
-       bowl2.bowlerfirstname as bowler2_firstname,
-        bowl2.bowlerlastname as bowler2_lastname,
+        bowl2. bowlerid as bowler2_ID,
+       concat(bowl2.bowlerfirstname ||" "|| bowl2.bowlerlastname) as bowler2_Fullname,
         bowl2.bowlerzip
         
 from bowlers bowl1
     join (bowlers bowl2)
     on ((bowl1.bowlerid <> bowl2.bowlerid)
     && (bowl1.bowlerzip = bowl2.bowlerzip))
+    order by bowler1_ID
+    ;
     
 
 /*

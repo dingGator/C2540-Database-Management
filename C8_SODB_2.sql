@@ -2,11 +2,14 @@ use salesordersexample;
 
 select	distinct
 	empl.EmpFirstName || ' ' || empl.EmpLastName as EmployeeFullName,
-	cust.CustFirstName || ' ' || cust.CustLastName as CustomerFullName
+	cust.CustFirstName || ' ' || cust.CustLastName as CustomerFullName,
+    OrderDate
+    
 from ((employees empl join orders ord
 	on((empl.employeeID = ord.employeeID)))
 	join customers cust
     on(( cust.customerID = ord.customerID)))
+    order by OrderDate
 ; 
 
 /*

@@ -1,8 +1,8 @@
 use recipesexample;
-select first_ingredient.IngredientName,
-       first_ingredient.MeasurementDescription,
-       second_ingredient.IngredientName,
-       second_ingredient.MeasurementDescription
+select first_ingr.IngredientName,
+       first_ingr.MeasurementDescription,
+       second_ingr.IngredientName,
+       second_ingr.MeasurementDescription
 
 
 /*(ingredients ingr
@@ -11,31 +11,32 @@ on(ingr.MeasureAmountID = meas.MeasureAmountID))
 */
 from 
 ((select 
-ingredients.IngredientName 
+ingr.IngredientName 
 	AS IngredientName,
-measurements.MeasurementDescription 
+meas.MeasurementDescription 
 	AS MeasurementDescription 
 
 from (
-	ingredients 
-	join measurements 
-		on(ingredients.MeasureAmountID 
-        = measurements.MeasureAmountID))) first_ingredient 
+	ingredients ingr
+	join measurements meas 
+		on(ingr.MeasureAmountID 
+        = meas.MeasureAmountID))) 
+        first_ingr 
 join 
 	(select 
-		ingredients.IngredientName 
+		ingr.IngredientName 
 			AS IngredientName,
-		measurements.MeasurementDescription 
+		meas.MeasurementDescription 
 			AS MeasurementDescription 
 	from 
-    (	ingredients 
-			join measurements 
-			on(ingredients.MeasureAmountID 
-            = measurements.MeasureAmountID))) second_ingredient 
-on((first_ingredient.IngredientName 
-	<> second_ingredient.IngredientName) 
-and (first_ingredient.MeasurementDescription 
-	= second_ingredient.MeasurementDescription)));
+    (	ingredients ingr
+			join measurements meas 
+			on(ingr.MeasureAmountID 
+            = meas.MeasureAmountID))) second_ingr 
+on((first_ingr.IngredientName 
+	<> second_ingr.IngredientName) 
+and (first_ingr.MeasurementDescription 
+	= second_ingr.MeasurementDescription)));
 
 
 
